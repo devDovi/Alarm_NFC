@@ -1,20 +1,32 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context="com.dovi.alarm.MainActivity">
 
-    <TimePicker
-        android:id="@+id/timePicker"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+    <ListView
+        android:id="@+id/listViewAlarm"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttonAlarm"/>
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/buttonAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="button" />
+        android:layout_alignParentRight="true"
+        android:layout_alignParentBottom="true"
+        android:text="alarm check" />
 
-</LinearLayout>
+    <Button
+        android:id="@+id/buttonNFC"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@id/buttonAlarm"
+        android:layout_alignParentBottom="true"
+        android:text="NFC"/>
+
+</RelativeLayout>
