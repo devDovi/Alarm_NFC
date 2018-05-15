@@ -1,5 +1,6 @@
 package com.dovi.alarm;
 
+import android.graphics.drawable.Drawable;
 import android.widget.ImageView;
 
 /**
@@ -12,6 +13,8 @@ public class AlarmListViewItem {
     private String textStr1;
     private String textStr2;
     private String textStr3;
+
+    private Drawable alarmIcon;
 
     public void setIsChecked(boolean checked) {
         isChecked = checked;
@@ -27,6 +30,10 @@ public class AlarmListViewItem {
 
     public void setTextStr3(String text) {
         textStr3 = text;
+    }
+
+    public void setAlarmIcon(Drawable img) {
+        alarmIcon = img;
     }
 
     public boolean getIsChecked() {
