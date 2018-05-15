@@ -72,6 +72,18 @@ public class AlarmListViewAdapter extends BaseAdapter {
         return convertView;
     }
 
+    public void addItem() {
+        AlarmListViewItem item = new AlarmListViewItem();
+
+        item.setIsChecked(true);
+        item.setTextStr1("00:00");
+        item.setTextStr2("AMPM");
+        item.setTextStr3("DAYDAY");
+
+        alarmListViewItemList.add(item);
+    }
+
+    // -> Move to Date / Time
     public void addItem(boolean isChecked, String text1, String text2, String text3) {
         AlarmListViewItem item = new AlarmListViewItem();
 
