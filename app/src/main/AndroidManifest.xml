@@ -3,6 +3,7 @@
     package="com.dovi.alarm">
 
     <uses-permission android:name="android.permission.NFC" />
+    <uses-feature android:name="android.hardware.nfc" />
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -18,7 +19,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".AlarmLockActivity" />
-        <activity android:name=".SetNFCActivity" />
+        <activity android:name=".SetNFCActivity"
+            android:launchMode="singleInstance" />
     </application>
 
 </manifest>

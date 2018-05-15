@@ -11,8 +11,10 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ListView;
 
 import java.util.Calendar;
+import java.util.List;
 
 public class MainActivity extends Activity {
 
@@ -20,6 +22,7 @@ public class MainActivity extends Activity {
     private Calendar mCalendar;
 
     private NotificationManager mNotification;
+
 
     private Button buttonAlarm;
     private Button buttonNFC;
@@ -32,6 +35,17 @@ public class MainActivity extends Activity {
         mNotification = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         mManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
+        ListView listViewAlarm;
+        AlarmListViewAdapter adapter;
+
+        adapter = new AlarmListViewAdapter();
+        listViewAlarm = (ListView) findViewById(R.id.listViewAlarm);
+        listViewAlarm.setAdapter(adapter);
+
+        adapter.addItem(true, "text1", "text2", "text3");
+        adapter.addItem(true, "text1", "text2", "text3");
+        adapter.addItem(true, "text1", "text2", "text3");
+        adapter.addItem(false, "text1", "text2", "text3");
 
         buttonAlarm = (Button)findViewById(R.id.buttonAlarm);
         buttonAlarm.setOnClickListener(new Button.OnClickListener() {
