@@ -7,25 +7,36 @@
     android:orientation="vertical"
     tools:context="com.dovi.alarm.MainActivity">
 
+    <TextView
+        android:id="@+id/textViewMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="20dp"
+        android:textAlignment="center"
+        android:text="No Setted Alarms"/>
+
     <ListView
         android:id="@+id/listViewAlarm"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_above="@+id/buttonAlarm"/>
+        android:layout_below="@+id/textViewMain"
+        android:layout_marginTop="10dp"
+        android:layout_above="@+id/buttonAddAlarm"/>
 
     <Button
-        android:id="@+id/buttonAlarm"
+        android:id="@+id/buttonAddAlarm"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentRight="true"
         android:layout_alignParentBottom="true"
-        android:text="alarm check" />
+        android:text="알람 추가" />
 
     <Button
         android:id="@+id/buttonNFC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_toLeftOf="@id/buttonAlarm"
+        android:layout_toLeftOf="@id/buttonAddAlarm"
         android:layout_alignParentBottom="true"
         android:text="NFC"/>
 

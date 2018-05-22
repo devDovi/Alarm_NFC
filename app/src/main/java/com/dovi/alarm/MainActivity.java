@@ -10,8 +10,10 @@ import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.Toast;
 
 import java.util.Calendar;
 import java.util.List;
@@ -24,7 +26,7 @@ public class MainActivity extends Activity {
     private NotificationManager mNotification;
 
 
-    private Button buttonAlarm;
+    private Button buttonAddAlarm;
     private Button buttonNFC;
 
     @Override
@@ -35,23 +37,28 @@ public class MainActivity extends Activity {
         mNotification = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         mManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
 
-        ListView listViewAlarm;
+        final ListView listViewAlarm;
         AlarmListViewAdapter adapter;
 
-        adapter = new AlarmListViewAdapter();
         listViewAlarm = (ListView) findViewById(R.id.listViewAlarm);
+
+        adapter = new AlarmListViewAdapter();
         listViewAlarm.setAdapter(adapter);
 
-        adapter.addItem(true, "text1", "text2", "text3");
-        adapter.addItem(true, "text1", "text2", "text3");
-        adapter.addItem(true, "text1", "text2", "text3");
-        adapter.addItem(false, "text1", "text2", "text3");
+        //adapter.addItem();
 
-        buttonAlarm = (Button)findViewById(R.id.buttonAlarm);
-        buttonAlarm.setOnClickListener(new Button.OnClickListener() {
+        listViewAlarm.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> adapterView, View view, int position, long id) {
+
+            }
+        });
+
+        buttonAddAlarm = (Button)findViewById(R.id.buttonAddAlarm);
+        buttonAddAlarm.setOnClickListener(new Button.OnClickListener() {
             @Override
             public void onClick(View view) {
-                setAlarm();
+                addAlarm();
             }
         });
 
@@ -65,6 +72,10 @@ public class MainActivity extends Activity {
         });
     }
 
+    private void addAlarm() {
+        Intent intent = new Intent(getApplicationContext(), SetAlarmActivity.class);
+        startActivity(intent);
+    }
 
     private void setAlarm() {
         mCalendar = Calendar.getInstance();
@@ -74,7 +85,7 @@ public class MainActivity extends Activity {
     }
 
     private PendingIntent pendingIntent() {
-        Intent i = new Intent(getApplicationContext(), AlarmLockActivity.class);
+        Intent i = new Intent(getApplicationContext(), SetAlarmActivity.class);
         PendingIntent pi = PendingIntent.getActivity(this, 0, i, 0);
         return pi;
     }

@@ -3,10 +3,12 @@ package com.dovi.alarm;
 import android.app.ActionBar;
 import android.content.Context;
 import android.graphics.drawable.Drawable;
+import android.text.Layout;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
@@ -60,14 +62,6 @@ public class AlarmListViewAdapter extends BaseAdapter {
         textView1.setText(alarmListViewItem.getTextStr1());
         textView2.setText(alarmListViewItem.getTextStr2());
         textView3.setText(alarmListViewItem.getTextStr3());
-
-        /*
-        View view = super.getView(position, convertView, parent);
-
-        ViewGroup.LayoutParams params = convertView.getLayoutParams();
-        params.height = 40;
-        convertView.setLayoutParams(params);
-        */
 
         return convertView;
     }

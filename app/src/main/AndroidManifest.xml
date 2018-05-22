@@ -21,6 +21,7 @@
         <activity android:name=".AlarmLockActivity" />
         <activity android:name=".SetNFCActivity"
             android:launchMode="singleInstance" />
+        <activity android:name=".SetAlarmActivity" />
     </application>
 
 </manifest>
