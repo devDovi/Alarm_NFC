@@ -51,6 +51,8 @@ public class MainActivity extends Activity {
 
         mNotification = (NotificationManager)getSystemService(NOTIFICATION_SERVICE);
         alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
+
+        setAlarm();
     }
 
     @Override
@@ -106,6 +108,8 @@ public class MainActivity extends Activity {
     }
 
     private void setAlarm() {
+        //Set Alarms on AlarmItemLists
+
         mCalendar = Calendar.getInstance();
         mCalendar.add(Calendar.SECOND, 5);
         Log.i("HelloAlarmActivity", mCalendar.getTime().toString());
