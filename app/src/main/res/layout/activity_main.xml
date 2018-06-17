@@ -8,7 +8,7 @@
     tools:context="com.dovi.alarm.MainActivity">
 
     <TextView
-        android:id="@+id/textViewMain"
+        android:id="@+id/textViewAlarm"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
@@ -20,7 +20,7 @@
         android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/textViewMain"
+        android:layout_below="@id/textViewAlarm"
         android:layout_alignParentBottom="true"
         android:scrollbars="vertical" />
 
@@ -33,7 +33,7 @@
         android:text="알람 추가" />
 
     <Button
-        android:id="@+id/buttonNFC"
+        android:id="@+id/buttonStartNFC"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_toLeftOf="@id/buttonAddAlarm"

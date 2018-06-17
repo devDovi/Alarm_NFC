@@ -20,14 +20,6 @@
         android:textSize="20dp"/>
 
     <TextView
-        android:id="@+id/textViewAMPM"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_toRightOf="@id/textViewTime"
-        android:layout_above="@id/textViewDate"
-        android:text="AMPM"/>
-
-    <TextView
         android:id="@+id/textViewDate"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
